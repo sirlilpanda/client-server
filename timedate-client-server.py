@@ -43,7 +43,7 @@ HELP_MESSAGE : str = """
             packet is sent to one of these ports it will return the response packet
             in the language corresponding to the port 
 
-        --help
+        --help || -h
 
             shows this message
 """
@@ -450,6 +450,8 @@ def main() -> None:
                 print(f"[ERROR] not enough args please refer to the help section by using --help or -h")
             case("--server", *arg):
                 print(f"[ERROR] not enough args please refer to the help section by using --help or -h")
+            case(*n):
+                print(HELP_MESSAGE)
     except Exception as e:
         print(f"[ERROR] something went horribly wrong, error:\n{e}")
 
